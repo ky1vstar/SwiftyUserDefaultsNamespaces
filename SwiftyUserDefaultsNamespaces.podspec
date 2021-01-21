@@ -14,8 +14,4 @@ Pod::Spec.new do |s|
     s.frameworks        = ["Foundation"]
     s.dependency          "SwiftyUserDefaults"
     s.source_files      = "Sources/SwiftyUserDefaultsNamespaces/**/*.swift"
-
-    s.test_spec 'Tests' do |test_spec|
-        test_spec.source_files = 'Tests/SwiftyUserDefaultsNamespacesTests/*.swift'
-    end
 end
