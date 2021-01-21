@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
-    s.name              = "SwiftyUserDefaults+Namespaces"
+    s.name              = "SwiftyUserDefaultsNamespaces"
     s.version           = ENV["LIB_VERSION"] || "1.0.0"
     s.summary           = "Handy SwiftyUserDefaults extension which provides namespaces support"
-    s.homepage          = "https://github.com/ky1vstar/SwiftyUserDefaults-Namespaces"
+    s.homepage          = "https://github.com/ky1vstar/SwiftyUserDefaultsNamespaces"
     s.license           = { :type => "MIT", :file => "LICENSE" }
     s.author            = { "ky1vstar" => "general@ky1vstar.dev" }
-    s.source            = { :git => "https://github.com/ky1vstar/SwiftyUserDefaults-Namespaces.git", :tag => s.version.to_s }
+    s.source            = { :git => "https://github.com/ky1vstar/SwiftyUserDefaultsNamespaces.git", :tag => s.version.to_s }
     
     s.swift_version     = '5.0'
     s.requires_arc      = true
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
     
     s.frameworks        = ["Foundation"]
     s.dependency          "SwiftyUserDefaults"
-    s.source_files      = "Sources/SwiftyUserDefaults+Namespaces/**/*.swift"
+    s.source_files      = "Sources/SwiftyUserDefaultsNamespaces/**/*.swift"
 end

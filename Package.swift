@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftyUserDefaults+Namespaces",
+    name: "SwiftyUserDefaultsNamespaces",
     platforms: [
         .macOS(.v10_11), .iOS(.v9), .tvOS(.v9), .watchOS(.v2)
     ],
     products: [
         .library(
-            name: "SwiftyUserDefaults+Namespaces",
-            targets: ["SwiftyUserDefaults+Namespaces"]
+            name: "SwiftyUserDefaultsNamespaces",
+            targets: ["SwiftyUserDefaultsNamespaces"]
         ),
     ],
     dependencies: [
@@ -22,12 +22,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SwiftyUserDefaults+Namespaces",
+            name: "SwiftyUserDefaultsNamespaces",
             dependencies: ["SwiftyUserDefaults"]
         ),
         .testTarget(
-            name: "SwiftyUserDefaults+NamespacesTests",
-            dependencies: ["SwiftyUserDefaults+Namespaces"]
+            name: "SwiftyUserDefaultsNamespacesTests",
+            dependencies: ["SwiftyUserDefaultsNamespaces"]
         ),
     ]
 )
