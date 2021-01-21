@@ -1,11 +1,11 @@
 import XCTest
-@testable import SwiftyUserDefaults_Namespaces
+@testable import SwiftyUserDefaultsNamespaces
 
-final class SwiftyUserDefaults_NamespacesTests: XCTestCase {
+final class SwiftyUserDefaultsNamespacesTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        // XCTAssertEqual(SwiftyUserDefaults_Namespaces().text, "Hello, World!")
+        // XCTAssertEqual(SwiftyUserDefaultsNamespaces().text, "Hello, World!")
     }
 }
