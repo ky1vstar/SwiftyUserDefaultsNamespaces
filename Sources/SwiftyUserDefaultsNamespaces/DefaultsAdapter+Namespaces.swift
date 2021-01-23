@@ -2,25 +2,41 @@ import Foundation
 import SwiftyUserDefaults
 
 public extension DefaultsAdapter {
-    func namespace<T: DefaultsKeyStore>(
-        _ namespace: DefaultsNamespace<T>
+    subscript<T: DefaultsKeyStore>(
+        namespace namespace: DefaultsNamespace<T>
     ) -> DefaultsAdapter<T> {
-        let userDefaults = NamespacedUserDefaults(
-            base: defaults,
-            namespaceKey: namespace.namespaceKey
-        )
-        return .init(
-            defaults: userDefaults,
-            keyStore: namespace.keyStore
-        )
+        get {
+            let userDefaults = NamespacedUserDefaults(
+                base: defaults,
+                namespaceKey: namespace.namespaceKey
+            )
+            return .init(
+                defaults: userDefaults,
+                keyStore: namespace.keyStore
+            )
+        }
+        nonmutating set {}
+    }
+    
+    subscript<T: DefaultsKeyStore>(
+        keyPath: KeyPath<KeyStore, DefaultsNamespace<T>>
+    ) -> DefaultsAdapter<T> {
+        get {
+            self[namespace: keyStore[keyPath: keyPath]]
+        }
+        nonmutating set {
+            self[namespace: keyStore[keyPath: keyPath]] = newValue
+        }
     }
     
     subscript<T: DefaultsKeyStore>(
         dynamicMember keyPath: KeyPath<KeyStore, DefaultsNamespace<T>>
     ) -> DefaultsAdapter<T> {
         get {
-            namespace(keyStore[keyPath: keyPath])
+            self[namespace: keyStore[keyPath: keyPath]]
         }
-        nonmutating set {}
+        nonmutating set {
+            self[namespace: keyStore[keyPath: keyPath]] = newValue
+        }
     }
 }
