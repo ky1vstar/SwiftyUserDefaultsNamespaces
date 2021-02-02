@@ -75,3 +75,7 @@ dependencies: [
 ```
 
 Alternatively navigate to your Xcode project, select `Swift Packages` and click the `+` icon to search for `SwiftyUserDefaultsNamespaces`.
+
+## License
+
+SwiftyUserDefaultsNamespaces is available under the MIT license. See the LICENSE file for more info.
