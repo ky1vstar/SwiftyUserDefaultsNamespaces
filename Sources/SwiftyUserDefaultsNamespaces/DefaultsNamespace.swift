@@ -1,5 +1,4 @@
 import Foundation
-import SwiftyUserDefaults
 
 public struct DefaultsNamespace<Store: DefaultsKeyStore> {
     public var namespaceKey: String

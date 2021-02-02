@@ -29,6 +29,21 @@
 		606AF0F125B9F1B0005FEAD0 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606AF0F025B9F1B0005FEAD0 /* SwiftyUserDefaults.framework */; };
 		606AF0F525B9F1D7005FEAD0 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606AF0F425B9F1D7005FEAD0 /* SwiftyUserDefaults.framework */; };
 		606AF0F925B9F1E1005FEAD0 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606AF0F825B9F1E1005FEAD0 /* SwiftyUserDefaults.framework */; };
+		60C549FF25C9D47A001B237A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C549FE25C9D47A001B237A /* TestHelper.swift */; };
+		60C54A0025C9D47A001B237A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C549FE25C9D47A001B237A /* TestHelper.swift */; };
+		60C54A0125C9D47A001B237A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C549FE25C9D47A001B237A /* TestHelper.swift */; };
+		60C54A1325C9D493001B237A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1025C9D493001B237A /* Utils.swift */; };
+		60C54A1425C9D493001B237A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1025C9D493001B237A /* Utils.swift */; };
+		60C54A1525C9D493001B237A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1025C9D493001B237A /* Utils.swift */; };
+		60C54A1625C9D493001B237A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1025C9D493001B237A /* Utils.swift */; };
+		60C54A1725C9D493001B237A /* ObservationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1125C9D493001B237A /* ObservationWrapper.swift */; };
+		60C54A1825C9D493001B237A /* ObservationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1125C9D493001B237A /* ObservationWrapper.swift */; };
+		60C54A1925C9D493001B237A /* ObservationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1125C9D493001B237A /* ObservationWrapper.swift */; };
+		60C54A1A25C9D493001B237A /* ObservationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1125C9D493001B237A /* ObservationWrapper.swift */; };
+		60C54A1B25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */; };
+		60C54A1C25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */; };
+		60C54A1D25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */; };
+		60C54A1E25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +95,10 @@
 		606AF0F425B9F1D7005FEAD0 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/watchOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		606AF0F825B9F1E1005FEAD0 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/Mac/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		606AF10325B9F2E9005FEAD0 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		60C549FE25C9D47A001B237A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		60C54A1025C9D493001B237A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		60C54A1125C9D493001B237A /* ObservationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationWrapper.swift; sourceTree = "<group>"; };
+		60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaultsNamespaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +215,9 @@
 				6009239625B9A6830022DEE9 /* DefaultsAdapter+Namespaces.swift */,
 				6009239725B9A6830022DEE9 /* NamespacedUserDefaults.swift */,
 				6009239825B9A6830022DEE9 /* DefaultsNamespace.swift */,
+				60C54A1125C9D493001B237A /* ObservationWrapper.swift */,
+				60C54A1225C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift */,
+				60C54A1025C9D493001B237A /* Utils.swift */,
 			);
 			path = SwiftyUserDefaultsNamespaces;
 			sourceTree = "<group>";
@@ -205,6 +227,7 @@
 			children = (
 				600923D425B9A7C90022DEE9 /* Info.plist */,
 				600923B425B9A69B0022DEE9 /* SwiftyUserDefaultsNamespacesTests.swift */,
+				60C549FE25C9D47A001B237A /* TestHelper.swift */,
 			);
 			path = SwiftyUserDefaultsNamespacesTests;
 			sourceTree = "<group>";
@@ -574,9 +597,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C54A1725C9D493001B237A /* ObservationWrapper.swift in Sources */,
 				6009239925B9A6830022DEE9 /* DefaultsAdapter+Namespaces.swift in Sources */,
+				60C54A1B25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */,
 				6009239D25B9A6830022DEE9 /* NamespacedUserDefaults.swift in Sources */,
 				600923A125B9A6830022DEE9 /* DefaultsNamespace.swift in Sources */,
+				60C54A1325C9D493001B237A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,9 +610,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C54A1825C9D493001B237A /* ObservationWrapper.swift in Sources */,
 				6009239A25B9A6830022DEE9 /* DefaultsAdapter+Namespaces.swift in Sources */,
+				60C54A1C25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */,
 				6009239E25B9A6830022DEE9 /* NamespacedUserDefaults.swift in Sources */,
 				600923A225B9A6830022DEE9 /* DefaultsNamespace.swift in Sources */,
+				60C54A1425C9D493001B237A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,9 +623,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C54A1925C9D493001B237A /* ObservationWrapper.swift in Sources */,
 				6009239B25B9A6830022DEE9 /* DefaultsAdapter+Namespaces.swift in Sources */,
+				60C54A1D25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */,
 				6009239F25B9A6830022DEE9 /* NamespacedUserDefaults.swift in Sources */,
 				600923A325B9A6830022DEE9 /* DefaultsNamespace.swift in Sources */,
+				60C54A1525C9D493001B237A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,9 +636,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60C54A1A25C9D493001B237A /* ObservationWrapper.swift in Sources */,
 				6009239C25B9A6830022DEE9 /* DefaultsAdapter+Namespaces.swift in Sources */,
+				60C54A1E25C9D493001B237A /* SwiftyUserDefaultsNamespaces.swift in Sources */,
 				600923A025B9A6830022DEE9 /* NamespacedUserDefaults.swift in Sources */,
 				600923A425B9A6830022DEE9 /* DefaultsNamespace.swift in Sources */,
+				60C54A1625C9D493001B237A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				600923B525B9A69B0022DEE9 /* SwiftyUserDefaultsNamespacesTests.swift in Sources */,
+				60C549FF25C9D47A001B237A /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				600923B625B9A69B0022DEE9 /* SwiftyUserDefaultsNamespacesTests.swift in Sources */,
+				60C54A0025C9D47A001B237A /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				600923B725B9A69B0022DEE9 /* SwiftyUserDefaultsNamespacesTests.swift in Sources */,
+				60C54A0125C9D47A001B237A /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

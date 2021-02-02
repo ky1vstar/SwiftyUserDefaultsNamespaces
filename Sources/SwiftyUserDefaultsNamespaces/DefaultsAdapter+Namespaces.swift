@@ -1,5 +1,4 @@
 import Foundation
-import SwiftyUserDefaults
 
 public extension DefaultsAdapter {
     subscript<T: DefaultsKeyStore>(

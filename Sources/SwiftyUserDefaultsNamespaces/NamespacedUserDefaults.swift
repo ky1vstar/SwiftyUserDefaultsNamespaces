@@ -2,7 +2,8 @@ import Foundation
 
 class NamespacedUserDefaults: UserDefaults {
     private var base: UserDefaults!
-    private var namespaceKey: NSString!
+    private var namespaceKey: String!
+    private var nsNamespaceKey: NSString!
     
     convenience init(base: UserDefaults, namespaceKey: String) {
         self.init()
@@ -10,16 +11,17 @@ class NamespacedUserDefaults: UserDefaults {
         if let namespaced = base as? NamespacedUserDefaults {
             self.base = namespaced.base
             self.namespaceKey = namespaced
-                .resolvedKey(for: namespaceKey) as NSString
+                .resolvedKey(for: namespaceKey)
         } else {
             self.base = base
-            self.namespaceKey = namespaceKey as NSString
+            self.namespaceKey = namespaceKey
         }
+        nsNamespaceKey = namespaceKey as NSString
     }
     
     @nonobjc
     private func resolvedKey(for key: String) -> String {
-        namespaceKey.appendingPathComponent(key)
+        nsNamespaceKey.appendingPathComponent(key)
     }
     
     override func removeObject(forKey defaultName: String) {
@@ -38,7 +40,7 @@ class NamespacedUserDefaults: UserDefaults {
         base.array(forKey: resolvedKey(for: defaultName))
     }
     
-    override func dictionary(forKey defaultName: String) -> [String : Any]? {
+    override func dictionary(forKey defaultName: String) -> [String: Any]? {
         base.dictionary(forKey: resolvedKey(for: defaultName))
     }
     
@@ -70,17 +72,14 @@ class NamespacedUserDefaults: UserDefaults {
         base.url(forKey: resolvedKey(for: defaultName))
     }
     
-    override func dictionaryRepresentation() -> [String : Any] {
-        let namespaceKey = self.namespaceKey as String
-        return Dictionary(
-            uniqueKeysWithValues: base
-                .dictionaryRepresentation()
-                .filter { $0.key.hasPrefix(namespaceKey) }
-                .map { (
-                    String($0.key.dropFirst(namespaceKey.count)),
-                    $0.value
-                ) }
-        )
+    override func dictionaryRepresentation() -> [String: Any] {
+        return base.dictionaryRepresentation()
+            .filter { $0.key.hasPrefix(namespaceKey) }
+            .map { (
+                String($0.key.dropFirst(namespaceKey.count)),
+                $0.value
+            ) }
+            .dictionary()
     }
     
     override func set(_ value: Any?, forKey defaultName: String) {
@@ -117,14 +116,8 @@ class NamespacedUserDefaults: UserDefaults {
         options: NSKeyValueObservingOptions = [],
         context: UnsafeMutableRawPointer?
     ) {
-        let wrapper = ObservationWrapper(
-            originalObserver: observer,
-            originalKeyPath: keyPath
-        )
-        objc_setAssociatedObject(
-            observer, &wrapperKey,
-            wrapper, .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-        )
+        let wrapper = ObservationWrapper
+            .create(for: observer, originalKeyPath: keyPath)
         
         base.addObserver(
             wrapper,
@@ -139,41 +132,13 @@ class NamespacedUserDefaults: UserDefaults {
         forKeyPath keyPath: String,
         context: UnsafeMutableRawPointer?
     ) {
-        guard let wrapper = objc_getAssociatedObject(observer, &wrapperKey)
-                as? ObservationWrapper
-        else {
+        guard let wrapper = ObservationWrapper.get(for: observer) else {
             return
         }
         
         base.removeObserver(
             wrapper,
             forKeyPath: resolvedKey(for: keyPath),
-            context: context
-        )
-    }
-}
-
-private var wrapperKey: UInt8 = 0
-
-private class ObservationWrapper: NSObject {
-    weak var originalObserver: NSObject?
-    let originalKeyPath: String
-    
-    init(originalObserver: NSObject, originalKeyPath: String) {
-        self.originalObserver = originalObserver
-        self.originalKeyPath = originalKeyPath
-    }
-    
-    override func observeValue(
-        forKeyPath keyPath: String?,
-        of object: Any?,
-        change: [NSKeyValueChangeKey : Any]?,
-        context: UnsafeMutableRawPointer?
-    ) {
-        originalObserver?.observeValue(
-            forKeyPath: originalKeyPath,
-            of: object,
-            change: change,
             context: context
         )
     }
